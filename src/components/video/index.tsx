@@ -107,7 +107,11 @@ const Video: FC = () => {
 				/>
 				<Button label="Set room" onClick={() => setRoom(roomValue)} />
 			</div>
-
+			<p className="italic text-xs text-white">
+				If you get a 503 error, refresh again in 1-2 minutes, the model is
+				loading. If you get a 429 error, then try again in 1 hour, the api
+				reached its rate limit as we are using the free plan.
+			</p>
 			{room && (
 				<>
 					<Webcam
