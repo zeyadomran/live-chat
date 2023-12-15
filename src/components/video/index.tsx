@@ -90,7 +90,7 @@ const Video: FC = () => {
 				} else {
 					setLoadingTime((time) => (time - 2 > 0 ? time - 2 : 0));
 				}
-			}, 1000);
+			}, 2000);
 			setT(timeout);
 		}
 	}, [webcamRef, t, loadingTime, room]);
