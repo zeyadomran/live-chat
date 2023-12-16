@@ -44,6 +44,7 @@ const Video: FC = () => {
 			const sortedMessages = fetchedMessages.sort(
 				(a, b) => a.createdAt - b.createdAt
 			);
+			console.log(sortedMessages);
 			setMessages(sortedMessages);
 		});
 		return () => unsubscribe();
@@ -53,6 +54,7 @@ const Video: FC = () => {
 		if (expression === '' || !room) return;
 		const { uid, displayName } = auth.currentUser!;
 		const message = messages.find((m: any) => m.name === displayName);
+		console.log('ref', message, messages);
 		if (!message) {
 			addDoc(collection(db, 'messages'), {
 				text: interimTranscript,
@@ -90,7 +92,7 @@ const Video: FC = () => {
 				} else {
 					setLoadingTime((time) => (time - 2 > 0 ? time - 2 : 0));
 				}
-			}, 2000);
+			}, 5000);
 			setT(timeout);
 		}
 	}, [webcamRef, t, loadingTime, room]);
