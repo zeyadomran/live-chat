@@ -59,7 +59,7 @@ const Video: FC = () => {
 			addDoc(collection(db, 'messages'), {
 				text: interimTranscript,
 				name: displayName,
-				room: 'test',
+				room,
 				expression,
 				uid,
 			});
